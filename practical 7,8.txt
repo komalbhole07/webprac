@@ -1,0 +1,51 @@
+practical 7
+ To demonstrate insert, update, delete, select operations in MongoDB 
+
+step 1 - Create A database:
+
+step 2 - Create A Collection 
+
+step 3 - Insert into the collection  
+   There are Two ways to insert the data into the collection
+         i. insertOne
+        ii. insertMany
+
+step 4 -  Update the data that we inserted 
+   There are Two ways to update a data  
+         i. updateOne
+         ii. updatemany
+
+step 5 - Select the data  
+
+step 6 - Delete the data  
+There are Two ways to delete the data  
+         i. deleteOne  
+         ii. deleteMany
+
+practical 8
+  To create collection and insert records in collections. 
+
+Create A database:
+
+step 2 - Create A Collection 
+
+step 3 - Insert into the collection  
+   There are Two ways to insert the data into the collection
+         i. insertOne
+        ii. insertMany
+
+step 4 -  Update the data that we inserted 
+   There are Two ways to update a data  
+         i. updateOne
+         ii. updatemany
+
+step 5 - Select the data  
+
+step 6 - Delete the data  
+There are Two ways to delete the data  
+         i. deleteOne  
+         ii. deleteMany
+
+
+practical 9
+  

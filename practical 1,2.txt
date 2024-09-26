@@ -1,0 +1,118 @@
+practical 1
+ Create a user-friendly interface with a clean and proper design. 
+
+<!DOCTYPE html> 
+<html ng-app="todoApp"> 
+          <head> 
+    <meta charset="UTF-8"> 
+    <title>To-Do List</title> 
+    <style> 
+        /* CSS */ 
+     body { font-family: Arial; display: flex; justify-content: center; align-items: 
+center;   height: 100vh; margin: 0; } 
+ 
+  .container { width: 300px; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); } 
+ 
+        input, button { padding: 10px; margin: 5px; } 
+        .done { text-decoration: line-through; } 
+ 
+    </style> 
+ 
+    <script 
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"> 
+ 
+</script> 
+    <!-- javaScript --> 
+ 
+    <script> 
+ 
+        angular.module('todoApp', []).controller('TodoController', function() { 
+            this.todos = [{text: 'Learn AngularJS', done: false}, {text: 'Build a to-do 
+app', done: false}]; 
+ 
+            this.addTodo = () => { if (this.newTodo) { this.todos.push({text: 
+this.newTodo, done: false}); this.newTodo = ''; } }; 
+            this.removeTask = (index) => { this.todos.splice(index, 1); }; 
+        });
+ </script> 
+</head> 
+        <body ng-controller="TodoController as ctrl"> 
+    <div class="container"> 
+ 
+ 
+<form ng-submit="ctrl.addTodo()"><input ng-model="ctrl.newTodo" placeholder="Add 
+task"><button>Add</button></form> 
+ 
+ <ul><li ng-repeat="todo in ctrl.todos"><input type="checkbox" ng
+model="todo.done"><span ng-class="{'done': todo.done}">{{todo.text}}</span><button 
+ng-click="ctrl.removeTask($index)">Remove</button></li></ul> 
+         
+             </div> 
+</body> 
+</html>
+
+
+
+practical 2
+ Develop AngularJS program to create a login form, with validation for 
+the username and password fields.
+
+<!DOCTYPE html> 
+<html ng-app="loginApp"> 
+            <head> 
+                  <title>Login</title> 
+ <script 
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> 
+ 
+  <style> 
+ 
+  body { background: burlywood; display: flex; justify-content: center; align-items: center; 
+height: 100vh; margin: 0; } 
+ 
+    .form-container { background: chocolate; padding: 70px; border-radius: 8px; box
+shadow: 0 0 10px black; text-align: center; } 
+ 
+    .error { color: red; } 
+    form.ng-pristine.ng-invalid.ng-invalid-required { display: flex; flex-direction: column; } 
+    button { color: red; padding: 9px; border-radius: 20px; } 
+ 
+  </style> 
+             </head> 
+                   <body ng-controller="loginCtrl"> 
+  <div class="form-container"> 
+    <h2>Firewall Authentication</h2> 
+    <form name="loginForm" ng-submit="submitForm()" novalidate> 
+ 
+      <label>Username: <input type="text" name="username" ng-model="user.username" 
+required> 
+ 
+        <span class="error" ng-show="loginForm.username.$dirty && 
+loginForm.username.$invalid">Required</span>
+ </label> 
+ 
+      <label>Password: <input type="password" name="password" ng
+model="user.password" required> 
+        
+ 
+ <span class="error" ng-show="loginForm.password.$dirty && 
+loginForm.password.$invalid">Required</span> 
+ 
+      </label> 
+ 
+      <button type="submit" ng-disabled="loginForm.$invalid">Login</button> 
+      <div ng-show="loginSuccess" style="color: black;">Login Successful!</div> 
+                </form> 
+                </div> 
+  <script> 
+ 
+ angular.module('loginApp', []).controller('loginCtrl', function($scope) { 
+      $scope.submitForm = function() { 
+        $scope.loginSuccess = $scope.user.username === 'student' && $scope.user.password 
+=== 'icoet'; 
+        if (!$scope.loginSuccess) $scope.user = {}; 
+      }; 
+    }); 
+  </script> 
+</body> 
+</html> 
+ 
